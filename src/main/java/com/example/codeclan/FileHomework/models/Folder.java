@@ -49,7 +49,7 @@ public class Folder {
         this.files = files;
     }
 
-    public void affFile(File file){
+    public void addFile(File file){
         this.files.add(file);
     }
 }
