@@ -50,7 +50,5 @@ public class DataLoader implements ApplicationRunner {
         user.addFolder(documentsFolder);
         user.addFolder(pictureFolder);
         userRepository.save(user);
-
-
     }
 }
