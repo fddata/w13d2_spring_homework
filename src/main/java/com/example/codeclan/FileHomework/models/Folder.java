@@ -22,6 +22,9 @@ public class Folder {
         this.title = title;
     }
 
+    public Folder() {
+    }
+
     public Long getId() {
         return id;
     }
