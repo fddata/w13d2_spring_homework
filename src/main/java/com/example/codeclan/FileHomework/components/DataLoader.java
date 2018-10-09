@@ -27,8 +27,11 @@ public class DataLoader implements ApplicationRunner {
     }
 
     public void run(ApplicationArguments args){
-        Folder pictureFolder = new Folder("My Pictures");
-        Folder documentsFolder = new Folder("My Documents");
+        User user = new User("John Doe");
+        userRepository.save(user);
+
+        Folder pictureFolder = new Folder("My Pictures", user);
+        Folder documentsFolder = new Folder("My Documents", user);
         folderRepository.save(pictureFolder);
         folderRepository.save(documentsFolder);
 
@@ -46,7 +49,7 @@ public class DataLoader implements ApplicationRunner {
         folderRepository.save(pictureFolder);
         folderRepository.save(documentsFolder);
 
-        User user = new User("John Doe");
+
         user.addFolder(documentsFolder);
         user.addFolder(pictureFolder);
         userRepository.save(user);

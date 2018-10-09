@@ -1,6 +1,8 @@
 package com.example.codeclan.FileHomework.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -15,14 +17,28 @@ public class Folder {
     @Column(name = "title")
     private String title;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "folder", fetch = FetchType.LAZY)
     private List<File> files;
 
-    public Folder(String title) {
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    public Folder(String title, User user) {
         this.title = title;
+        this.user = user;
     }
 
     public Folder() {
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Long getId() {
