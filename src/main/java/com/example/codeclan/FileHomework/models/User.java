@@ -24,6 +24,7 @@ public class User {
 
     public User(String name) {
         this.name = name;
+        this.folders = new ArrayList<>();
     }
 
     public User() {
