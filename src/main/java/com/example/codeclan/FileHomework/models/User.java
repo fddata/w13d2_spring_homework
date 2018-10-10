@@ -17,7 +17,8 @@ public class User {
     @Column(name = "user_name")
     private String name;
 
-    @JsonIgnore
+
+//    "mappedBy" has to relate to a property in the folder class.
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Folder> folders;
 

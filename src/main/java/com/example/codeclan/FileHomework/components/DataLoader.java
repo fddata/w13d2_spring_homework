@@ -44,14 +44,5 @@ public class DataLoader implements ApplicationRunner {
         fileRepository.save(documentFile1);
         fileRepository.save(documentFile2);
 
-        pictureFolder.addFile(pictureFile1);
-        pictureFolder.addFile(pictureFile2);
-        folderRepository.save(pictureFolder);
-        folderRepository.save(documentsFolder);
-
-
-        user.addFolder(documentsFolder);
-        user.addFolder(pictureFolder);
-        userRepository.save(user);
     }
 }
